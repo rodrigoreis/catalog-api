@@ -1,0 +1,32 @@
+---
+version: '3.8'
+
+services:
+  mongo:
+    image: docker.io/library/mongo:latest
+    container_name: mongo-0
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "root"
+    volumes:
+      - mongo-vl:/data/db
+    networks:
+      - catalog-api-nt
+
+networks:
+  catalog-api-nt:
+    name: catalog-api-nt
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.1.0/29
+          gateway: 10.10.1.1
+
+volumes:
+  mongo-vl:
+    name: mongo-vl
+    driver: local
