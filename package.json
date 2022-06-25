@@ -1,0 +1,32 @@
+{
+  "name": "catalog-api",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A simple product catalog API written in javascript, for study purposes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export NODE_ENV=development && export NODE_CONFIG_DIR=$PWD/src/server/config && export DEBUG=catalog-api:* && nodemon src/server/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoreis/catalog-api.git"
+  },
+  "engines": {
+    "node": ">=18.4.0"
+  },
+  "keywords": [],
+  "author": "Rodrigo Reis <rodrigosor@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigoreis/catalog-api/issues"
+  },
+  "homepage": "https://github.com/rodrigoreis/catalog-api#readme",
+  "dependencies": {
+    "config": "^3.3.7",
+    "debug": "^4.3.4",
+    "dnscache": "^1.0.2",
+    "express": "^4.18.1",
+    "mongoist": "^2.5.4"
+  }
+}
